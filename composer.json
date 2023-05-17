@@ -1,0 +1,21 @@
+{
+    "name": "khalyutkin/piper",
+    "description": "Php pipes",
+    "type": "library",
+    "require-dev": {
+        "vimeo/psalm": "^5.11"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Piper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Khalyutkin Victor",
+            "email": "Khalutkin1@yandex.ru"
+        }
+    ],
+    "require": {}
+}
