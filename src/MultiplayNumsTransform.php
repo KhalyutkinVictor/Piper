@@ -17,11 +17,14 @@ class MultiplayNumsTransform implements ITransform
 
     /**
      * @param int|float $val
-     * @return int|float
+     * @return IStream<int|float, int|float>
      */
-    public function transform($val): mixed
+    public function transform($val): IStream
     {
-        return $val * $this->coeff;
+        /** @var Stream<int|float> */
+        $stream = new Stream();
+        $stream->in($val * $this->coeff);
+        return $stream;
     }
 
 }

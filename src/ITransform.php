@@ -2,6 +2,8 @@
 
 namespace Piper;
 
+use Piper\IStream;
+
 /**
  * @template T
  * @template O
@@ -11,8 +13,8 @@ interface ITransform
 
     /**
      * @param T $val
-     * @return O
+     * @return IStream<O, O>
      */
-    public function transform($val): mixed;
+    public function transform($val): IStream;
 
 }

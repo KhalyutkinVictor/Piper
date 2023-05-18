@@ -32,7 +32,10 @@ class TransformStream implements IStream
      */
     public function in($val): void
     {
-        $this->buf[] = $this->transform->transform($val);
+        $stream = $this->transform->transform($val);
+        while (!$stream->isEmpty()) {
+            $this->buf[] = $stream->out();
+        }
     }
 
 }
