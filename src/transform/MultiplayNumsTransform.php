@@ -1,6 +1,10 @@
 <?php
 
-namespace Piper;
+namespace Piper\transform;
+
+use Piper\IStream;
+use Piper\ITransform;
+use Piper\Stream;
 
 /**
  * @implements ITransform<int|float, int|float>

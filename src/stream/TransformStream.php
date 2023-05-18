@@ -1,9 +1,10 @@
 <?php
 
-namespace Piper;
+namespace Piper\stream;
 
 use Piper\ITransform;
 use Piper\IStream;
+use Piper\BaseStreamTrait;
 
 /**
  * @template T
