@@ -8,9 +8,11 @@ use Piper\TransformStream;
 
 $a = [1, 2, 3, 4, 5];
 
+/** @var Stream<int> $inStream */
 $inStream = new Stream();
-$transformStream = new TransformStream(new \Piper\MultiplayNumsTransform(2));
 
+/** @var TransformStream<int, int> */
+$transformStream = new TransformStream(new \Piper\MultiplayNumsTransform(2));
 $pipe = new Pipe($inStream, $transformStream);
 
 foreach ($a as $v) {
