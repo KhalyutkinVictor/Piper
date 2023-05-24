@@ -4,6 +4,7 @@ namespace Piper;
 
 use Piper\IStream;
 use Piper\ITransform;
+use Piper\StreamHelperTrait;
 
 /**
  * @template T
@@ -15,6 +16,9 @@ class Pipe implements IStream
 {
     /** @use BaseStreamTrait<O> */
     use BaseStreamTrait;
+
+    /** @use StreamHelperTrait<P, O> */
+    use StreamHelperTrait;
 
     /** @var \Piper\IStream<T, P> */
     private \Piper\IStream $s1;
@@ -41,9 +45,7 @@ class Pipe implements IStream
         while (!$this->s1->isEmpty()) {
             $this->s2->in($this->s1->out());
         }
-        while (!$this->s2->isEmpty()) {
-            $this->buf[] = $this->s2->out();
-        }
+        $this->moveEverythingFromStreamToBuf($this->s2);
     }
 
 }

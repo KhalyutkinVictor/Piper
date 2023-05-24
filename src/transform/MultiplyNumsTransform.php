@@ -9,7 +9,7 @@ use Piper\Stream;
 /**
  * @implements ITransform<int|float, int|float>
  */
-class MultiplayNumsTransform implements ITransform
+class MultiplyNumsTransform implements ITransform
 {
 
     private int|float $coeff;

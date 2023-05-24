@@ -5,7 +5,7 @@ include __DIR__ . '/../vendor/autoload.php';
 use Piper\Pipe;
 use Piper\Stream;
 use Piper\stream\TransformStream;
-use Piper\transform\MultiplayNumsTransform;
+use Piper\transform\MultiplyNumsTransform;
 use Piper\transform\RepeatTransform;
 
 $a = [1, 2, 3, 4, 5];
@@ -14,7 +14,7 @@ $a = [1, 2, 3, 4, 5];
 $inStream = new Stream();
 
 /** @var TransformStream<int, int> */
-$transformStream = new TransformStream(new MultiplayNumsTransform(2));
+$transformStream = new TransformStream(new MultiplyNumsTransform(2));
 $pipe = new Pipe($inStream, $transformStream);
 
 foreach ($a as $v) {
